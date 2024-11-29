@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white">
+
+    <!-- Barre supérieure -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:orientation="horizontal"
+        android:background="@android:color/holo_blue_light"
+        android:elevation="4dp"
+        android:gravity="center_vertical"
+        android:padding="8dp">
+
+        <!-- Icône retour -->
+        <ImageView
+            android:id="@+id/backIcon"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginEnd="16dp"
+            android:src="@drawable/ic_arrow_back"
+            android:contentDescription="Retour"
+            app:tint="@android:color/white" />
+
+        <!-- Titre de la page -->
+        <TextView
+            android:id="@+id/pageTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Réservation"
+            android:textSize="20sp"
+            android:textColor="@android:color/white"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <!-- Contenu défilant -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="16dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp"
+            android:elevation="8dp">
+
+            <!-- Section Titre -->
+
+
+            <!-- Section Information Utilisateur -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardElevation="4dp"
+                app:cardCornerRadius="8dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <EditText
+                        android:id="@+id/firstNameEditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Prénom"
+                        android:padding="12dp"
+                        android:textSize="16sp"
+                        android:background="@drawable/rounded_edittext_background" />
+
+                    <EditText
+                        android:id="@+id/lastNameEditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Nom"
+                        android:padding="12dp"
+                        android:textSize="16sp"
+                        android:layout_marginTop="8dp"
+                        android:background="@drawable/rounded_edittext_background" />
+
+                    <EditText
+                        android:id="@+id/phoneEditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Numéro de téléphone"
+                        android:padding="12dp"
+                        android:textSize="16sp"
+                        android:layout_marginTop="8dp"
+                        android:background="@drawable/rounded_edittext_background" />
+
+                    <EditText
+                        android:id="@+id/emailEditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Adresse email"
+                        android:padding="12dp"
+                        android:textSize="16sp"
+                        android:layout_marginTop="8dp"
+                        android:background="@drawable/rounded_edittext_background" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Section Détails Réservation -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardElevation="4dp"
+                app:cardCornerRadius="8dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <EditText
+                        android:id="@+id/checkInDateEditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Date et heure d'arrivée"
+                        android:padding="12dp"
+                        android:textSize="16sp"
+                        android:background="@drawable/rounded_edittext_background" />
+
+                    <EditText
+                        android:id="@+id/checkOutDateEditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Date et heure de départ"
+                        android:padding="12dp"
+                        android:textSize="16sp"
+                        android:layout_marginTop="8dp"
+                        android:background="@drawable/rounded_edittext_background" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Section Spinner -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="3"
+                android:layout_marginBottom="16dp">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_marginEnd="8dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Adultes" />
+
+                    <Spinner
+                        android:id="@+id/adultsCountSpinner"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_marginEnd="8dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Enfants" />
+
+                    <Spinner
+                        android:id="@+id/childrenCountSpinner"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Chambres" />
+
+                    <Spinner
+                        android:id="@+id/roomsCountSpinner"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Bouton Réserver -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/bookingButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_margin="16dp"
+                android:text="Réserver"
+                android:textAllCaps="false"
+                android:textColor="@android:color/white"
+                app:backgroundTint="@android:color/holo_blue_light" />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
